@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fundii.ai — Modern CRE Loan Servicing</title>
+  <meta name="description" content="AI-powered loan servicing for CRE lenders. Reduce exceptions by 70% and close audits 3x faster with document parsing, validation, and reporting." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Ramp-inspired neutral + emerald palette
+            base: {
+              950: '#0B1220',
+              900: '#0F172A',
+              800: '#1F2937',
+              700: '#334155',
+              600: '#475569',
+              500: '#64748B',
+              400: '#94A3B8',
+              300: '#CBD5E1',
+              200: '#E2E8F0',
+              100: '#F1F5F9',
+              50:  '#F8FAFC'
+            },
+            accent: {
+              600: '#059669', // emerald
+              500: '#10B981',
+              400: '#34D399'
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'ui-sans-serif', 'system-ui']
+          },
+          borderRadius: {
+            xl2: '1.25rem'
+          },
+          boxShadow: {
+            subtle: '0 8px 24px rgba(2, 6, 23, 0.08)'
+          },
+          backgroundImage: {
+            'hero-grid': "radial-gradient(closest-side, rgba(16,185,129,0.12), transparent 70%), radial-gradient(closest-side, rgba(2,6,23,0.06), transparent 60%)"
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', ui-sans-serif, system-ui; }
+    .glass { backdrop-filter: saturate(180%) blur(12px); }
+    .ring-focus:focus-visible { outline: none; box-shadow: 0 0 0 4px rgba(16,185,129,.35); }
+  </style>
+</head>
+<body class="bg-base-50 text-base-900">
+  <!-- Nav -->
+  <header id="siteHeader" class="sticky top-0 z-50 border-b border-transparent transition-colors">
+    <div class="glass bg-white/70">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="#top" class="text-base-900 font-semibold tracking-tight">Fundii.ai</a>
+        <nav class="hidden md:flex items-center gap-8 text-base-600" aria-label="Primary">
+          <a href="#features" class="hover:text-base-900">Features</a>
+          <a href="#security" class="hover:text-base-900">Security</a>
+          <a href="#pricing" class="hover:text-base-900">Pricing</a>
+          <a href="#faq" class="hover:text-base-900">FAQ</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="#" class="hidden sm:inline-block text-base-600 hover:text-base-900">Sign in</a>
+          <a href="#demo" class="inline-flex items-center rounded-full bg-base-900 text-white px-4 py-2 text-sm font-semibold hover:opacity-90">Book a demo</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-hero-grid"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-14 lg:pt-28 lg:pb-20">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div class="lg:col-span-7">
+          <p class="inline-flex items-center gap-2 text-base-600 text-sm">
+            <span class="inline-flex h-6 items-center rounded-full border border-base-200 px-2.5 bg-white">Built for CRE lenders</span>
+            <span>Accuracy, speed, audit-ready.</span>
+          </p>
+          <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-base-900">End the paper chase.</h1>
+          <p class="mt-5 text-lg text-base-600 max-w-2xl">AI-powered loan servicing that reduces exceptions by <span class="font-semibold text-base-900">70%</span> and closes audits <span class="font-semibold text-base-900">3× faster</span>.</p>
+          <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl">
+            <input type="email" required placeholder="Work email" class="flex-1 rounded-full border border-base-200 bg-white px-4 py-3 ring-focus" />
+            <button class="rounded-full bg-accent-600 text-white px-6 py-3 font-semibold hover:bg-accent-500">Get started free</button>
+          </form>
+          <div class="mt-6 flex items-center gap-4 text-sm text-base-600">
+            <div class="flex -space-x-2">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-base-200 text-base-700 text-xs">SJ</span>
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-base-200 text-base-700 text-xs">MC</span>
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-base-200 text-base-700 text-xs">DR</span>
+            </div>
+            <span>Trusted by leading lenders</span>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="rounded-xl2 border border-base-200 bg-white shadow-subtle overflow-hidden">
+            <div class="flex items-center gap-2 border-b border-base-200 px-4 h-10">
+              <span class="h-2.5 w-2.5 rounded-full bg-base-200"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-base-200"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-base-200"></span>
+              <span class="ml-2 text-xs text-base-500">Fundii — Document Parsing</span>
+            </div>
+            <div class="p-4">
+              <div class="h-64 rounded-lg bg-base-100 border border-base-200 grid grid-cols-3 gap-3 p-3">
+                <div class="col-span-1 space-y-2">
+                  <div class="h-3 bg-base-200 rounded"></div>
+                  <div class="h-3 bg-base-200 rounded w-2/3"></div>
+                  <div class="h-3 bg-base-200 rounded w-1/2"></div>
+                  <div class="h-24 bg-white border border-base-200 rounded"></div>
+                </div>
+                <div class="col-span-2 grid grid-rows-3 gap-3">
+                  <div class="bg-white border border-base-200 rounded"></div>
+                  <div class="bg-white border border-base-200 rounded"></div>
+                  <div class="bg-white border border-base-200 rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="sr-only">Product screenshot placeholder</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPIs -->
+  <section class="py-14 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="text-4xl font-bold text-base-900">70%</div>
+          <div class="mt-1 text-base-600">Faster processing</div>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="text-4xl font-bold text-base-900">&lt;1%</div>
+          <div class="mt-1 text-base-600">Error rate</div>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="text-4xl font-bold text-base-900">3×</div>
+          <div class="mt-1 text-base-600">Faster audits</div>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="text-4xl font-bold text-base-900">400+</div>
+          <div class="mt-1 text-base-600">Hours saved</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain → Solution -->
+  <section class="py-20 bg-base-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-base-900">Stop chasing documents. Start closing deals.</h2>
+        <p class="mt-3 text-base-600">Transform your servicing operations from reactive firefighting to proactive portfolio management.</p>
+      </div>
+      <div class="mt-12 grid lg:grid-cols-2 gap-8">
+        <div class="space-y-5">
+          <h3 class="text-xl font-semibold text-base-900">Current reality</h3>
+          <div class="rounded-xl2 border border-base-200 bg-white p-5 flex gap-4"><span class="i">❌</span><div><p class="font-medium">Manual document chase eats analyst time</p><p class="text-base-600">Teams spend 60% of time hunting down insurance certificates and rent rolls.</p></div></div>
+          <div class="rounded-xl2 border border-base-200 bg-white p-5 flex gap-4"><span>❌</span><div><p class="font-medium">Extraction errors create compliance risk</p><p class="text-base-600">Manual entry leads to 5–15% error rates and audit issues.</p></div></div>
+          <div class="rounded-xl2 border border-base-200 bg-white p-5 flex gap-4"><span>❌</span><div><p class="font-medium">Audits take weeks of manual prep</p><p class="text-base-600">Scrambling to compile reports and documentation.</p></div></div>
+          <div class="rounded-xl2 border border-base-200 bg-white p-5 flex gap-4"><span>❌</span><div><p class="font-medium">Disconnected systems = silos</p><p class="text-base-600">Data scattered across spreadsheets, emails, and legacy tools.</p></div></div>
+        </div>
+        <div class="space-y-5">
+          <h3 class="text-xl font-semibold text-base-900">With Fundii</h3>
+          <div class="rounded-xl2 border border-base-200 bg-white p-5 flex gap-4"><span>✅</span><div><p class="font-medium">70% faster reviews</p><p class="text-base-600">AI parses rent rolls, insurance binders, and tax bills in seconds.</p></div></div>
+          <div class="rounded-xl2 border border-base-200 bg-white p-5 flex gap-4"><span>✅</span><div><p class="font-medium">&lt;1% extraction error</p><p class="text-base-600">Purpose-built models that understand CRE formats and edge cases.</p></div></div>
+          <div class="rounded-xl2 border border-base-200 bg-white p-5 flex gap-4"><span>✅</span><div><p class="font-medium">One‑click audit packages</p><p class="text-base-600">Generate watchlists, servicer reports, and regulatory docs instantly.</p></div></div>
+          <div class="rounded-xl2 border border-base-200 bg-white p-5 flex gap-4"><span>✅</span><div><p class="font-medium">Unified source of truth</p><p class="text-base-600">Seamless integrations with Salesforce, HubSpot, and your warehouse.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-base-900">Purpose‑built for CRE workflows</h2>
+        <p class="mt-3 text-base-600">Every feature is designed for commercial real estate servicing.</p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-xl2 border border-base-200 bg-white p-6">
+          <h3 class="text-lg font-semibold text-base-900">Document parsing</h3>
+          <p class="mt-2 text-base-600">99%+ accuracy across rent rolls, insurance, tax bills, and financials.</p>
+          <ul class="mt-4 space-y-2 text-sm text-base-600 list-disc list-inside">
+            <li>Rent roll analysis</li>
+            <li>Insurance certificate tracking</li>
+            <li>Tax bill processing</li>
+          </ul>
+        </article>
+        <article class="rounded-xl2 border border-base-200 bg-white p-6">
+          <h3 class="text-lg font-semibold text-base-900">Checklist automation</h3>
+          <p class="mt-2 text-base-600">Policy‑aware workflows flag exceptions automatically.</p>
+          <ul class="mt-4 space-y-2 text-sm text-base-600 list-disc list-inside">
+            <li>Automated compliance checks</li>
+            <li>Exception flagging</li>
+            <li>Policy enforcement</li>
+          </ul>
+        </article>
+        <article class="rounded-xl2 border border-base-200 bg-white p-6">
+          <h3 class="text-lg font-semibold text-base-900">Data validation</h3>
+          <p class="mt-2 text-base-600">Cross‑reference data across sources; catch discrepancies early.</p>
+          <ul class="mt-4 space-y-2 text-sm text-base-600 list-disc list-inside">
+            <li>Multi‑source validation</li>
+            <li>Discrepancy detection</li>
+            <li>Quality assurance</li>
+          </ul>
+        </article>
+        <article class="rounded-xl2 border border-base-200 bg-white p-6">
+          <h3 class="text-lg font-semibold text-base-900">Report generation</h3>
+          <p class="mt-2 text-base-600">One‑click watchlists, servicer reports, and dashboards.</p>
+          <ul class="mt-4 space-y-2 text-sm text-base-600 list-disc list-inside">
+            <li>Automated watchlists</li>
+            <li>Servicer reports</li>
+            <li>Custom dashboards</li>
+          </ul>
+        </article>
+        <article class="rounded-xl2 border border-base-200 bg-white p-6">
+          <h3 class="text-lg font-semibold text-base-900">CRM & data sync</h3>
+          <p class="mt-2 text-base-600">Salesforce, HubSpot, Snowflake, and more.</p>
+          <ul class="mt-4 space-y-2 text-sm text-base-600 list-disc list-inside">
+            <li>Real‑time CRM sync</li>
+            <li>Warehouse exports</li>
+            <li>Flexible APIs</li>
+          </ul>
+        </article>
+        <article class="rounded-xl2 border border-base-200 bg-white p-6">
+          <h3 class="text-lg font-semibold text-base-900">Approvals</h3>
+          <p class="mt-2 text-base-600">Review exceptions with one click and full audit trail.</p>
+          <ul class="mt-4 space-y-2 text-sm text-base-600 list-disc list-inside">
+            <li>Role‑based permissions</li>
+            <li>Audit logging</li>
+            <li>Granular controls</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow -->
+  <section class="py-20 bg-base-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-base-900">Your documents, processed in minutes</h2>
+        <p class="mt-3 text-base-600">From upload to CRM sync, see the Fundii flow.</p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-base-100">1</div>
+          <h3 class="font-semibold">Ingest</h3>
+          <p class="mt-1 text-base-600">Upload via drag‑and‑drop or API</p>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-base-100">2</div>
+          <h3 class="font-semibold">Extract</h3>
+          <p class="mt-1 text-base-600">AI parses data with 99%+ accuracy</p>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-base-100">3</div>
+          <h3 class="font-semibold">Validate</h3>
+          <p class="mt-1 text-base-600">Cross‑check against records</p>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-base-100">4</div>
+          <h3 class="font-semibold">Approve</h3>
+          <p class="mt-1 text-base-600">One‑click exception review</p>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-base-100">5</div>
+          <h3 class="font-semibold">Report</h3>
+          <p class="mt-1 text-base-600">Instant compliance packages</p>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <div class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-base-100">6</div>
+          <h3 class="font-semibold">Sync</h3>
+          <p class="mt-1 text-base-600">Push to CRM & warehouse</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section id="security" class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-base-900">Enterprise‑grade security</h2>
+        <p class="mt-3 text-base-600">Encryption at rest and in transit, role‑based access, and full audit logs.</p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-4 gap-6">
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <h3 class="font-semibold">SOC 2 Type II</h3>
+          <p class="mt-1 text-base-600 text-sm">Certified compliance (placeholder)</p>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <h3 class="font-semibold">End‑to‑end encryption</h3>
+          <p class="mt-1 text-base-600 text-sm">In transit and at rest</p>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <h3 class="font-semibold">PII handling</h3>
+          <p class="mt-1 text-base-600 text-sm">Automatic redaction and protection</p>
+        </div>
+        <div class="rounded-xl2 border border-base-200 bg-white p-6 text-center">
+          <h3 class="font-semibold">Data residency</h3>
+          <p class="mt-1 text-base-600 text-sm">Flexible hosting options</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing CTA -->
+  <section id="pricing" class="py-20 bg-base-900 text-white">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Ready to transform your loan servicing?</h2>
+      <p class="mt-3 text-white/80">White‑glove onboarding • Pilot in 2 weeks • Custom pricing</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#demo" class="inline-flex items-center justify-center rounded-full bg-white text-base-900 px-6 py-3 font-semibold hover:opacity-90">Book a demo</a>
+        <a href="#features" class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 font-semibold hover:bg-white/10">See features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead form -->
+  <section id="demo" class="py-20 bg-base-50">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-xl2 border border-base-200 bg-white p-8 shadow-subtle">
+        <div class="text-center">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-base-900">Get started today</h2>
+          <p class="mt-2 text-base-600">See how Fundii can transform your operations</p>
+        </div>
+        <form class="mt-8 grid gap-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm text-base-700">Name *</span>
+              <input required class="mt-1 w-full rounded-lg border border-base-200 bg-white px-3 py-2 ring-focus" />
+            </label>
+            <label class="block">
+              <span class="text-sm text-base-700">Work email *</span>
+              <input type="email" required class="mt-1 w-full rounded-lg border border-base-200 bg-white px-3 py-2 ring-focus" />
+            </label>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm text-base-700">Company *</span>
+              <input required class="mt-1 w-full rounded-lg border border-base-200 bg-white px-3 py-2 ring-focus" />
+            </label>
+            <label class="block">
+              <span class="text-sm text-base-700">Portfolio size</span>
+              <select class="mt-1 w-full rounded-lg border border-base-200 bg-white px-3 py-2 ring-focus">
+                <option>Select portfolio size</option>
+                <option>Under $100M</option>
+                <option>$100M – $500M</option>
+                <option>$500M – $1B</option>
+                <option>$1B – $5B</option>
+                <option>Over $5B</option>
+              </select>
+            </label>
+          </div>
+          <label class="block">
+            <span class="text-sm text-base-700">Tell us about your current workflow</span>
+            <textarea rows="4" class="mt-1 w-full rounded-lg border border-base-200 bg-white px-3 py-2 ring-focus" placeholder="What are your biggest challenges?"></textarea>
+          </label>
+          <button class="rounded-full bg-accent-600 text-white px-6 py-3 font-semibold hover:bg-accent-500">Book a demo</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-white">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-base-900">Frequently asked questions</h2>
+      </div>
+      <div class="mt-12 divide-y divide-base-200 rounded-xl2 border border-base-200">
+        <details class="group open:bg-base-50">
+          <summary class="flex cursor-pointer list-none items-center justify-between px-5 py-4">
+            <span class="font-medium text-base-900">How accurate is the document extraction?</span>
+            <span class="transition-transform group-open:-rotate-180">⌄</span>
+          </summary>
+          <div class="px-5 pb-4 text-base-600">99%+ accuracy on standard CRE documents like rent rolls and insurance binders; models learn from your formats.</div>
+        </details>
+        <details class="group">
+          <summary class="flex cursor-pointer list-none items-center justify-between px-5 py-4">
+            <span class="font-medium text-base-900">What systems do you integrate with?</span>
+            <span class="transition-transform group-open:-rotate-180">⌄</span>
+          </summary>
+          <div class="px-5 pb-4 text-base-600">Native integrations with Salesforce, HubSpot, Snowflake, Box, Google Drive, and more. Custom via API.</div>
+        </details>
+        <details class="group">
+          <summary class="flex cursor-pointer list-none items-center justify-between px-5 py-4">
+            <span class="font-medium text-base-900">How long does onboarding take?</span>
+            <span class="transition-transform group-open:-rotate-180">⌄</span>
+          </summary>
+          <div class="px-5 pb-4 text-base-600">Most clients are processing documents within 2 weeks with white‑glove onboarding.</div>
+        </details>
+        <details class="group">
+          <summary class="flex cursor-pointer list-none items-center justify-between px-5 py-4">
+            <span class="font-medium text-base-900">How do you handle data retention and privacy?</span>
+            <span class="transition-transform group-open:-rotate-180">⌄</span>
+          </summary>
+          <div class="px-5 pb-4 text-base-600">Encryption in transit and at rest, flexible retention policies, and regional hosting options.</div>
+        </details>
+        <details class="group">
+          <summary class="flex cursor-pointer list-none items-center justify-between px-5 py-4">
+            <span class="font-medium text-base-900">What's your pricing model?</span>
+            <span class="transition-transform group-open:-rotate-180">⌄</span>
+          </summary>
+          <div class="px-5 pb-4 text-base-600">Based on document volume and feature needs; contact sales for a tailored quote.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-base-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="text-base-900 font-semibold">Fundii.ai</div>
+          <p class="mt-2 text-base-600 text-sm">Real estate loan servicing copilot for CRE lenders.</p>
+        </div>
+        <nav class="text-sm text-base-600">
+          <h4 class="font-semibold text-base-900 mb-2">Company</h4>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:text-base-900">About</a></li>
+            <li><a href="#" class="hover:text-base-900">Careers</a></li>
+            <li><a href="#" class="hover:text-base-900">Contact</a></li>
+            <li><a href="#" class="hover:text-base-900">Blog</a></li>
+          </ul>
+        </nav>
+        <nav class="text-sm text-base-600">
+          <h4 class="font-semibold text-base-900 mb-2">Product</h4>
+          <ul class="space-y-1">
+            <li><a href="#features" class="hover:text-base-900">Features</a></li>
+            <li><a href="#security" class="hover:text-base-900">Security</a></li>
+            <li><a href="#features" class="hover:text-base-900">Integrations</a></li>
+            <li><a href="#pricing" class="hover:text-base-900">Pricing</a></li>
+          </ul>
+        </nav>
+        <nav class="text-sm text-base-600">
+          <h4 class="font-semibold text-base-900 mb-2">Legal</h4>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:text-base-900">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-base-900">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="mt-8 text-center text-sm text-base-500">© 2025 Fundii.ai. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Header border on scroll
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => {
+      if (window.scrollY > 8) {
+        header.classList.add('border-base-200', 'bg-white');
+      } else {
+        header.classList.remove('border-base-200', 'bg-white');
+      }
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+
+    // Fake submit
+    document.querySelectorAll('form').forEach(f => {
+      f.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thanks! We\'ll reach out to schedule your demo.');
+      });
+    });
+  </script>
+</body>
+</html>
